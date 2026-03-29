@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-sky-50 text-slate-800 overflow-hidden;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+.bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+  50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+}
+
+.star-pop {
+  animation: star-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes star-pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
